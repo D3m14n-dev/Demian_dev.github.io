@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <title>Inicio</title>
+</head>
+
+<body bgcolor="#8d999e">
+<!-- Define el color de fondo -->
+
+<!-- Bloque de inicio de sesión -->
+<div id="login-box" style="background-color:#222; color:white; width:300px; padding:20px; border-radius:10px; margin:100px auto; text-align:center;">
+    <!-- Contenedor del cuadro de inicio de sesión con fondo oscuro y centrado -->
+
+    <h2 style="color:orange;">Iniciar Sesión</h2>
+    <!-- Título en color naranja -->
+
+    <form onsubmit="return iniciarSesion()">
+        <!-- Formulario que llama a la función "iniciarSesion()" al presionar el botón -->
+
+        <label for="usuario">Usuario</label>
+        <!-- Etiqueta para el campo de texto del nombre de usuario -->
+
+        <input type="text" id="usuario" name="usuario"
+                style="width:90%; padding:8px; margin:8px 0; border:none; border-radius:5px;">
+        <!-- Campo donde el usuario escribe su nombre de usuario -->
+
+        <label for="password">Contraseña</label>
+        <!-- Etiqueta para el campo de contraseña -->
+
+        <input type="password" id="password" name="password"
+                style="width:90%; padding:8px; margin:8px 0; border-radius:5px;">
+        <!-- Sitio para escribir la contraseña (los numeros o letras no se ven) -->
+
+        <input type="submit" value="Entrar"
+                style="width:95%; background-color:orange; color:white; padding:8px; cursor:pointer; font-weight:bold;">
+        <!-- Botón que envía el formulario -->
+    </form>
+</div>
+
+<!-- Contenido oculto hasta que se inicie sesión -->
+<div id="contenido" style="display:none;">
+<!-- Este div contiene todo el contenido principal, pero está oculto hasta que se haga login -->
+
+    <nav>
+        <!-- Barra de navegación con enlaces -->
+        <a href="index.html">Inicio</a> |
+        <!-- Enlace al archivo index.html -->
+        <a href="sobre.html">Sobre mí</a> |
+        <!-- Enlace a la página sobre mí -->
+        <a href="contacto.html">Contacto</a>
+        <!-- Enlace a la página de contacto -->
+    </nav>
+
+    <hr>
+    <!-- Línea horizontal decorativa para separar secciones -->
+
+    <h1>Bienvenido a mi segunda web en Aplicaciones Web</h1>
+    <!-- Título principal de la página -->
+
+    <p>Hola, soy <strong>Demian</strong>. Actualmente estudio <b>1º de SMR</b> y esta es mi segunda web creada.</p>
+    <!-- Párrafo de presentación con texto en negrita -->
+
+    <img src="https://www.shutterstock.com/image-vector/meme-flork-pups-morning-coffee-600nw-2308864881.jpg" alt="Imagen de bienvenida">
+    <!-- Imagen mostrada en la página -->
+
+    <h2>¿Qué puedes encontrar aquí?</h2>
+    <!-- Subtítulo o encabezado de segundo nivel -->
+
+    <ul>
+        <!-- Lista desordenada (con viñetas) -->
+        <li>Un poco sobre mí y mis estudios</li>
+        <li>Mis gustos en informática</li>
+        <li>Para contactarme</li>
+    </ul>
+
+    <hr>
+
+    <footer>
+        <!-- Pie de página con información secundaria -->
+        <p>Demian Baiges | Mi proyecto de Aplicaciones Web</p>
+        <!-- Texto dentro del pie de página -->
+    </footer>
+</div>
+
+<!-- Script para manejar el inicio de sesión -->
+<script>
+function iniciarSesion() {
+    var usuario = document.getElementById("usuario").value;
+
+    var password = document.getElementById("password").value;
+
+    if (usuario === "admin" && password === "1234") {
+        document.getElementById("login-box").style.display = "none";
+        document.getElementById("contenido").style.display = "block";
+
+        return false;
+    } else {
+        alert("Usuario o contraseña incorrectos");
+        return false;
+    }
+}
+</script>
+
+</body>
+
+
+</html>
+
+
